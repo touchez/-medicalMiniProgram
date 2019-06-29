@@ -1,0 +1,11 @@
+<!--hide.wxml-->
+<view class="guahao">
+  <view class="guahao-titile">
+    <view ><image class="guahao-img" src="{{yiyuan}}" mode="scale"></image></view>
+    <view class="guahao-keshi">{{keshi}}</view>
+  </view>
+  <view class="guhao-tishi">
+      <view class="guahao-pnum">前面预计还有{{pnum}}人</view>
+      <view class="guahao-time">预计等待{{time}}分钟</view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--list.wxml-->
+<view class="warp">
+
+  
+  <!-- 时间线模板-->
+    <template name="listtem">
+      <navigator url="../../pages/detail/detail?departmentid={{departmentId}}"  hover-class="navigator-hover">
+        <view class="imgs"><image class="img" src="../../image/yiyuan.png" mode="scale"></image></view>
+        <view class="infos">
+          <view class="title">{{departmentName}}</view>
+          <view class="date">挂号费{{departmentCost}}</view>
+        </view>
+      </navigator>
+    </template>
+
+  <!-- 循环输出列表-->
+  <view wx:for="{{departmentlist}}" class="list">
+    <template is="listtem" data="{{...item}}"/>
+  </view>
+</view>

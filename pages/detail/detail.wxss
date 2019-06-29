@@ -1,0 +1,30 @@
+/* pages/detail/detail.wxss */
+
+.guahao-keshi {
+  text-align: center;
+  font-size: 50px;
+}
+
+.guahao-img {
+  display: block;
+  width: 124px;
+  height: 110px;
+  margin: 20px auto;
+}
+
+.guahao-pnum, .guahao-time {
+  text-align: center;
+  font-size: 20px;
+}
+
+.back {
+  color: dimgray;
+  border-radius: 20rpx;
+  border: 2rpx solid dimgray;
+  height: 20rpx;
+  padding: 45rpx 70rpx;
+  width: 40%;
+  margin-left: 20%;
+  margin-top: 20%;
+  line-height: 20rpx;
+}

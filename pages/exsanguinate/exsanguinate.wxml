@@ -1,0 +1,22 @@
+<!--detail.wxml-->
+<view class="guahao">
+  <view  class="guhao-tishi" >
+  <view class="guahao-pnum">检查项目：血常规</view>
+      <view class="guahao-pnum">检查地点：{{exsanguinateAddr}}</view>
+      <view class="guahao-pnum">生化指标1：{{exsanguinateAttr1}}</view>
+      <view class="guahao-time">生化指标2：{{exsanguinateAttr2}}</view>
+      <view class="guahao-time">生化指标3：{{exsanguinateAttr3}}</view>
+      <view class="guahao-time">检查费用：{{exsanguinateCost}}</view>
+      <view class="guahao-time">血常规流水号：{{exsanguinateId}}</view>
+      <view class="guahao-time">结论：{{exsanguinateReport}}</view>
+      <view class="guahao-time">检查时间：{{exsanguinateTime}}</view>
+      <view class="guahao-time">报告时间：{{reportTime}}</view>
+      <view class="guahao-time">用户id：{{userId}}</view>
+      
+      
+  </view>
+  <view   wx:if="{{msg!='success'}}">
+      <view class="guahao-pnum">{{msg}}</view>
+      
+  </view>
+</view>

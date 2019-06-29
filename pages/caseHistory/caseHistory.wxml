@@ -1,0 +1,87 @@
+<!--pages/caseHistory/caseHistory.wxml-->
+
+<!--中间内容-->
+<view class='content'>
+    <view class='con_rignt'>
+        <view class='cureCur'>
+            <view class='firstCure'>
+                <view class='text'>
+                    <view class='symptom'>症状：</view>
+                    <view class='textarea'>{{symptom}}</view>
+                </view>
+                <view class='text'>
+                    <view class='primaryDiagnosis'>初步诊断：</view>
+                    <view class='textarea'>{{medicalrecordContentFirst}}</view>
+                </view>
+            </view>
+            <view class="warp" >
+              <!-- 时间线模板-->
+                <template name="listtem" >
+                  <view   wx:if="{{examinationType=='exsanguinate'}}">
+                      <navigator url="../exsanguinate/exsanguinate?examinationOrderId={{examinationOrderId}}" hover-class="navigator-hover">
+                        <view class="examine_item">exsanguinate：{{examinationType}}</view>
+                      </navigator>
+                  </view>
+                  <view   wx:if="{{examinationType=='ct'}}">
+                      <navigator url="../ct/ct?examinationOrderId={{examinationOrderId}}" hover-class="navigator-hover">
+                        <view class="examine_item">ct：{{examinationType}}</view>
+                      </navigator>
+                  </view>
+                  <view   wx:if="{{examinationType=='xray'}}">
+                      <navigator url="../xray/xray?examinationOrderId={{examinationOrderId}}" hover-class="navigator-hover">
+                        <view class="examine_item">xray：{{examinationType}}</view>
+                      </navigator>
+                  </view>
+
+                </template>
+
+              <!-- 循环输出列表-->
+              <view wx:for="{{jianchalist}}" >
+                <template is="listtem" data="{{...item}}"/>
+              </view>
+            </view>
+
+
+            <view class='finalDiagnosis text'>
+                <view class='finalDiagnosis_text'>最终诊断：</view>
+                <view class='textarea'>{{medicalrecordContentFinally}}</view>
+            </view>
+            <view class='medicine'>
+                <view class='medicine_text'>治疗方式：</view>
+                <view class='medicine_item'>
+                    <view class='medicine_name'>{{treatment}}</view>
+                    <!--<view class='medicine_time'>2盒 用法：2次/天 一次两片</view>-->
+                </view>
+                <!--
+                <view class='medicine_item'>
+                    <view class='medicine_name'>泰诺酚麻美敏片</view>
+                    <view class='medicine_time'>2盒 用法：2次/天 一次两片</view>
+                </view>
+                <view class='medicine_item'>
+                    <view class='medicine_name'>泰诺酚麻美敏片</view>
+                    <view class='medicine_time'>2盒 用法：2次/天 一次两片</view>
+                </view>
+                -->
+            </view>
+        </view>
+        <view class='cureHis'>
+            <view class='cureHisText'>病史:</view>
+            <view class='cureItem'>
+                <view class='diseaseName'>高血压</view>
+                <view class='diseaseTime'>2018-12-11</view>
+                <view class='hospital'>普陀中心医院</view>
+            </view>
+            <view class='cureItem'>
+                <view class='diseaseName'>高血压</view>
+                <view class='diseaseTime'>2018-06-17</view>
+                <view class='hospital'>上海第六医院</view>
+            </view>
+            <view class='cureItem'>
+                <view class='diseaseName'>心脏病</view>
+                <view class='diseaseTime'>2017-12-01</view>
+                <view class='hospital'>普陀中心医院</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--内容结束-->

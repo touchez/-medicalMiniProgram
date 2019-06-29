@@ -1,0 +1,24 @@
+<!--detail.wxml-->
+<view class="guahao">
+
+  <view class="guahao-titile">
+    <view>
+      <image class="guahao-img" src="{{yiyuan}}" mode="scale"></image>
+    </view>
+    <view class="guahao-keshi">{{keshi}}</view>
+  </view>
+
+  <!-- 挂号成功 -->
+  <view class="guhao-tishi" wx:if="{{msg=='success'}}">
+    <view class="guahao-pnum">挂号成功！</view>
+    <view class="guahao-pnum">前方排队{{pnum}}人</view>
+    <view class="guahao-time">预计等待{{time}}分钟</view>
+    <view class="test">test</view>
+  </view>
+
+  <!-- 挂号失败 -->
+  <view style="text-align:center; display: flex; flex-flow: column;" wx:if="{{msg!='success'}}">
+    <div class="guahao-pnum" style="color:dimgray;">抱歉 您已挂号 不可重复挂号</div>
+    <div class="back" bindtap='backtohome'> 返回 </div>
+  </view>
+</view>

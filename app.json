@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/historylist/historylist",
+    "pages/list/list",
+    "pages/index/index",
+    "pages/caseHistory/caseHistory",
+    "pages/hide/hide",
+    "pages/activity/activity",
+    "pages/logs/logs"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "iconPath":"/image/guahao.png",
+        "selectedIconPath":"/image/guahao.png"
+
+        
+      },
+      {
+        "pagePath": "pages/historylist/historylist",
+        "text": "病历"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+  
+}

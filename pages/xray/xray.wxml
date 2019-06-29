@@ -1,0 +1,22 @@
+<!--detail.wxml-->
+<view class="guahao">
+  <view  class="guhao-tishi" >
+      <view class="guahao-pnum">检查项目：X光</view>
+      <view class="guahao-pnum">检查地点：{{xrayAddr}}</view>
+      <view class="guahao-pnum">检查部位：{{xrayPart}}</view>
+      <view class="guahao-time">样片：{{xrayImg}}</view>
+      <view class="guahao-time">检查费用：{{xrayCost}}</view>
+      <view class="guahao-time">xray流水号：{{xrayId}}</view>
+      <view class="guahao-time">结论：{{xrayReport}}</view>
+      <view class="guahao-time">检查时间：{{xrayTime}}</view>
+      <view class="guahao-time">报告时间：{{reportTime}}</view>
+      <view class="guahao-time">用户id：{{userId}}</view>
+   
+      
+      
+  </view>
+  <view   wx:if="{{msg!='success'}}">
+      <view class="guahao-pnum">{{msg}}</view>
+      
+  </view>
+</view>

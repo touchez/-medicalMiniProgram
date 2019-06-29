@@ -1,0 +1,76 @@
+<!--list.wxml-->
+<view class="warp">
+<!-- 首页 -->
+
+  <!-- 时间线模板-->
+  <template name="listtem">
+
+<!-- 挂号事件 -->
+    <navigator url="../../pages/detail/detail?departmentid={{guahao.departmentId}}" hover-class="navigator-hover" class="haveb">
+
+      <view class="infos">
+        <div class="titlev">
+          <view class="front">挂号科室 : </view>
+          <view class="cont">{{guahao.departmentName}}</view>
+        </div>
+        <div class="titlev">
+          <view class="front">等待人数 : </view>
+          <view class="cont">{{order}}</view>
+        </div>  
+      </view>
+    </navigator>
+  </template>
+
+<!-- 未支付事件列表 -->
+  <template name="nopaylisttem">
+    <navigator url="../caseHistory/caseHistory?medicalRecordId={{medicalRecordId}}" hover-class="navigator-hover"  class="haveb">
+
+      <view class="infos">
+        <div class="titlev">
+          <view class="front">检查科目 : </view>
+          <view class="cont">{{examinationType}}</view>
+        </div>
+        <div class="titlev">
+          <view class="front">检查花费 : ￥</view>
+          <view class="cont">{{examinationCost}}</view>
+        </div>  
+      </view>
+    </navigator>
+  </template>
+
+<!-- 已支付事件 -->
+  <template name="paylisttem">
+    <navigator url="../caseHistory/caseHistory?medicalRecordId={{medicalrecordId}}" hover-class="navigator-hover"  class="haveb">
+
+      <view class="infos">
+        <div class="titlev">
+          <view class="front">检查科目 : </view>
+          <view class="cont">{{examinationType}}</view>
+        </div>
+        <div class="titlev">
+          <view class="front">检查花费 : ￥</view>
+          <view class="cont">{{examinationCost}}</view>
+        </div>  
+      </view>
+    </navigator>
+  </template>
+
+  <!-- 循环输出列表-->
+  <view class="title">挂号事件</view>
+  <view wx:for="{{guahaolist}}" class="list">
+
+    <template is="listtem" data="{{...item}}" />
+  </view>
+
+  <view class="title">等待支付的检查事件</view>
+  <view wx:for="{{nopaylist}}" class="list">
+
+    <template is="nopaylisttem" data="{{...item}}" />
+  </view>
+
+  <view class="title">已经支付的检查事件</view>
+  <view wx:for="{{paylist}}" class="list">
+
+    <template is="paylisttem" data="{{...item}}" />
+  </view>
+</view>

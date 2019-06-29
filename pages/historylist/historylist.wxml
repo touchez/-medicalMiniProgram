@@ -1,0 +1,24 @@
+<!--list.wxml-->
+<view class="warp">
+  <!-- 病历 -->
+  <!-- 时间线模板-->
+  <template name="listtem">
+    <navigator url="../caseHistory/caseHistory?medicalRecordId={{medicalRecordId}}" hover-class="navigator-hover">
+      <view class="imgs">
+        <image class="img" src="../../image/yiyuan.png" mode="scale"></image>
+      </view>
+
+      <view class="infos">
+        <view class="titleid"> 序号 : {{medicalRecordId}}</view>
+        <view class="title">{{generalName}}</view>
+        <view class="date">{{date}}</view>
+        <view class="addr">{{addr}}</view>
+      </view>
+    </navigator>
+  </template>
+
+  <!-- 循环输出列表-->
+  <view wx:for="{{historylist}}" class="list">
+    <template is="listtem" data="{{...item}}" />
+  </view>
+</view>
